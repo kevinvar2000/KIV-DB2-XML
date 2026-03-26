@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<recipes title="Fitness Cookbook" version="1.2">
+
+    <recipe id="rec_001" difficulty="medium" category="breakfast" created="2026-01-08" updated="2026-03-15">
+        <title>Protein-Packed Blueberry Pancakes</title>
+        <description>A low-carb, high-protein start to your day using Greek yogurt and oats.</description>
+        <author>Emily Carter</author>
+        <rating>4.7</rating>
+        <times>
+            <prep unit="minutes">10</prep>
+            <cook unit="minutes">15</cook>
+        </times>
+        <macros>
+            <calories>350</calories>
+            <protein unit="g">32</protein>
+            <carbs unit="g">25</carbs>
+            <fat unit="g">8</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_1"/>
+            <ingredient-ref ref="ing_2"/>
+            <ingredient-ref ref="ing_3"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Blend the <ing-ref ref="ing_2">oats</ing-ref> into a fine flour using a <tool>blender</tool>.</step>
+            <step num="2">Whisk in <ing-ref ref="ing_1">egg whites</ing-ref> and <ing-ref ref="ing_3">yogurt</ing-ref> until smooth.</step>
+            <step num="3">Cook on a non-stick pan over medium heat until bubbles form.</step>
+        </instructions>
+        <tags>
+            <tag>high-protein</tag>
+            <tag>vegetarian</tag>
+            <tag>sugar-free</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_002" difficulty="easy" category="dinner" created="2026-01-12" updated="2026-03-18">
+        <title>Lemon Herb Baked Salmon</title>
+        <description>Essential Omega-3 fatty acids paired with light seasoning.</description>
+        <author>James Novak</author>
+        <rating>4.9</rating>
+        <times>
+            <prep unit="minutes">5</prep>
+            <cook unit="minutes">20</cook>
+        </times>
+        <macros>
+            <calories>420</calories>
+            <protein unit="g">40</protein>
+            <carbs unit="g">0</carbs>
+            <fat unit="g">22</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_4"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Preheat oven to 200°C.</step>
+            <step num="2">Season <ing-ref ref="ing_4">salmon</ing-ref> with lemon and dill.</step>
+        </instructions>
+        <tags>
+            <tag>keto</tag>
+            <tag>paleo</tag>
+            <tag>gluten-free</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_003" difficulty="easy" category="snack" created="2026-01-19" updated="2026-03-20">
+        <title>Avocado Toast with Poached Egg</title>
+        <description>Healthy fats and high-quality protein on whole-grain sourdough.</description>
+        <author>Sarah Kim</author>
+        <rating>4.5</rating>
+        <times>
+            <prep unit="minutes">5</prep>
+            <cook unit="minutes">5</cook>
+        </times>
+        <macros>
+            <calories>280</calories>
+            <protein unit="g">12</protein>
+            <carbs unit="g">22</carbs>
+            <fat unit="g">18</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_5"/>
+            <ingredient-ref ref="ing_6"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Mash the <ing-ref ref="ing_5">avocado</ing-ref> on toasted bread.</step>
+            <step num="2">Poach the <ing-ref ref="ing_6">egg</ing-ref> for 3 minutes.</step>
+        </instructions>
+        <tags>
+            <tag>vegetarian</tag>
+            <tag>healthy-fats</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_004" difficulty="hard" category="lunch" created="2026-01-25" updated="2026-03-21">
+        <title>Quinoa Power Bowl</title>
+        <description>A complex meal-prep friendly bowl with plant-based protein.</description>
+        <author>Marco Rossi</author>
+        <rating>4.3</rating>
+        <times>
+            <prep unit="minutes">15</prep>
+            <cook unit="minutes">25</cook>
+        </times>
+        <macros>
+            <calories>520</calories>
+            <protein unit="g">18</protein>
+            <carbs unit="g">65</carbs>
+            <fat unit="g">14</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_7"/>
+            <ingredient-ref ref="ing_8"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Rinse <ing-ref ref="ing_7">quinoa</ing-ref> and boil for 15 mins.</step>
+            <step num="2">Roast <ing-ref ref="ing_8">chickpeas</ing-ref> with paprika.</step>
+        </instructions>
+        <tags>
+            <tag>vegan</tag>
+            <tag>meal-prep</tag>
+            <tag>fiber-rich</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_005" difficulty="medium" category="dinner" created="2026-02-02" updated="2026-03-22">
+        <title>Lean Beef Stir-Fry</title>
+        <description>Rapid muscle recovery meal with lean steak and colorful peppers.</description>
+        <author>David Chen</author>
+        <rating>4.6</rating>
+        <times>
+            <prep unit="minutes">10</prep>
+            <cook unit="minutes">10</cook>
+        </times>
+        <macros>
+            <calories>450</calories>
+            <protein unit="g">45</protein>
+            <carbs unit="g">12</carbs>
+            <fat unit="g">15</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_9"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Flash fry <ing-ref ref="ing_9">beef</ing-ref> in a hot <tool>wok</tool>.</step>
+        </instructions>
+        <tags>
+            <tag>low-carb</tag>
+            <tag>high-protein</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_006" difficulty="easy" category="snack" created="2026-02-10" updated="2026-03-22">
+        <title>Cottage Cheese Berry Bowl</title>
+        <description>Slow-digesting casein protein for overnight recovery.</description>
+        <author>Emily Carter</author>
+        <rating>4.2</rating>
+        <times>
+            <prep unit="minutes">2</prep>
+            <cook unit="minutes">0</cook>
+        </times>
+        <macros>
+            <calories>180</calories>
+            <protein unit="g">25</protein>
+            <carbs unit="g">15</carbs>
+            <fat unit="g">2</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_10"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Mix <ing-ref ref="ing_10">cottage cheese</ing-ref> with berries.</step>
+        </instructions>
+        <tags>
+            <tag>low-fat</tag>
+            <tag>vegetarian</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_007" difficulty="medium" category="lunch" created="2026-02-14" updated="2026-03-23">
+        <title>Turkey and Spinach Wrap</title>
+        <description>High protein, low glycemic index lunch.</description>
+        <author>Anna Petrova</author>
+        <rating>4.4</rating>
+        <times>
+            <prep unit="minutes">10</prep>
+            <cook unit="minutes">0</cook>
+        </times>
+        <macros>
+            <calories>310</calories>
+            <protein unit="g">28</protein>
+            <carbs unit="g">35</carbs>
+            <fat unit="g">7</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_11"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Layer <ing-ref ref="ing_11">turkey</ing-ref> on a whole-wheat tortilla.</step>
+        </instructions>
+        <tags>
+            <tag>high-protein</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_008" difficulty="easy" category="breakfast" created="2026-02-21" updated="2026-03-24">
+        <title>Overnight Protein Oats</title>
+        <description>Convenient grab-and-go breakfast.</description>
+        <author>James Novak</author>
+        <rating>4.8</rating>
+        <times>
+            <prep unit="minutes">5</prep>
+            <cook unit="minutes">480</cook>
+        </times>
+        <macros>
+            <calories>390</calories>
+            <protein unit="g">30</protein>
+            <carbs unit="g">45</carbs>
+            <fat unit="g">10</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_12"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Combine <ing-ref ref="ing_12">whey</ing-ref> with milk and oats overnight.</step>
+        </instructions>
+        <tags>
+            <tag>meal-prep</tag>
+            <tag>vegetarian</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_009" difficulty="hard" category="dinner" created="2026-02-27" updated="2026-03-25">
+        <title>Stuffed Bell Peppers</title>
+        <description>Lean turkey and rice stuffed peppers.</description>
+        <author>Marco Rossi</author>
+        <rating>4.1</rating>
+        <times>
+            <prep unit="minutes">20</prep>
+            <cook unit="minutes">45</cook>
+        </times>
+        <macros>
+            <calories>380</calories>
+            <protein unit="g">34</protein>
+            <carbs unit="g">30</carbs>
+            <fat unit="g">12</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_13"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Clean the <ing-ref ref="ing_13">peppers</ing-ref> and stuff them.</step>
+        </instructions>
+        <tags>
+            <tag>gluten-free</tag>
+        </tags>
+    </recipe>
+
+    <recipe id="rec_010" difficulty="easy" category="snack" created="2026-03-03" updated="2026-03-26">
+        <title>Greek Salad with Feta</title>
+        <description>Refreshing vegetable mix for micronutrients.</description>
+        <author>Sarah Kim</author>
+        <rating>4.0</rating>
+        <times>
+            <prep unit="minutes">8</prep>
+            <cook unit="minutes">0</cook>
+        </times>
+        <macros>
+            <calories>210</calories>
+            <protein unit="g">8</protein>
+            <carbs unit="g">10</carbs>
+            <fat unit="g">16</fat>
+        </macros>
+        <ingredient-refs>
+            <ingredient-ref ref="ing_14"/>
+        </ingredient-refs>
+        <instructions>
+            <step num="1">Toss veggies with <ing-ref ref="ing_14">feta</ing-ref>.</step>
+        </instructions>
+        <tags>
+            <tag>vegetarian</tag>
+            <tag>low-carb</tag>
+        </tags>
+    </recipe>
+
+</recipes>

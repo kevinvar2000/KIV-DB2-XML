@@ -1,0 +1,140 @@
+# Queries for XML Project
+# Use each query block individually in your XPath/XQuery processor.
+# Data files expected in the same folder: recipes.xml, ingredients.xml
+
+====================
+XPATH QUERIES
+====================
+
+[1] First recipe title
+/recipes/recipe[1]/title
+
+[2] Recipes with difficulty = easy OR medium
+/recipes/recipe[@difficulty='easy' or @difficulty='medium']
+
+[3] Authors starting with J OR containing Kim
+/recipes/recipe[starts-with(author, 'J') or contains(author, 'Kim')]/author
+
+[4] Recipes with rating >= 4.5
+/recipes/recipe[number(rating) >= 4.5]
+
+[5] Ingredients in protein category
+/ingredients/ingredient[@category='protein']/name
+
+[6] Prep time of recipe rec_004
+/recipes/recipe[@id='rec_004']/times/prep
+
+[7] Recipes where vegetarian or vegan tag exists (exists())
+/recipes/recipe[exists(tags/tag[.='vegetarian' or .='vegan'])]
+
+[8] Last ingredient measured in grams
+/ingredients/ingredient[unit='g'][last()]/name
+
+[9] First 5 ingredients using position()
+/ingredients/ingredient[position() <= 5]/name
+
+[10] Dinner recipes OR recipes with protein > 35g
+/recipes/recipe[@category='dinner' or macros/protein > 35]
+
+
+====================
+XQUERY QUERIES
+====================
+
+[1] Recipe title + author + rating
+for $r in doc("recipes.xml")/recipes/recipe
+return <recipe-summary id="{$r/@id}">
+    <title>{$r/title/text()}</title>
+    <author>{$r/author/text()}</author>
+    <rating>{$r/rating/text()}</rating>
+</recipe-summary>
+
+[2] Recipes under 300 calories OR top-rated >= 4.8 (sorted)
+for $r in doc("recipes.xml")/recipes/recipe
+where $r/macros/calories < 300 or xs:decimal($r/rating) >= 4.8
+order by xs:integer($r/macros/calories)
+return <low-cal recipe="{$r/@id}">
+    <title>{$r/title/text()}</title>
+    <calories>{$r/macros/calories/text()}</calories>
+    <rating>{$r/rating/text()}</rating>
+</low-cal>
+
+[3] Group recipes by category
+for $cat in distinct-values(doc("recipes.xml")/recipes/recipe/@category)
+let $items := doc("recipes.xml")/recipes/recipe[@category = $cat]
+return <category name="{$cat}" count="{count($items)}">
+    {
+        for $r in $items
+        return <recipe>{$r/title/text()}</recipe>
+    }
+</category>
+
+[4] Join recipes with ingredient details
+for $r in doc("recipes.xml")/recipes/recipe
+return <recipe title="{$r/title/text()}" author="{$r/author/text()}">
+    {
+        for $ref in $r/ingredient-refs/ingredient-ref
+        let $ing := doc("ingredients.xml")/ingredients/ingredient[@id = $ref/@ref]
+        return <ingredient>{$ing/name/text()} ({$ing/amount/text()} {$ing/unit/text()})</ingredient>
+    }
+</recipe>
+
+[5] Average calories and rating
+let $recipes := doc("recipes.xml")/recipes/recipe
+return <averages>
+    <avg-calories>{round(avg($recipes/macros/calories))}</avg-calories>
+    <avg-rating>{round-half-to-even(avg($recipes/rating), 2)}</avg-rating>
+</averages>
+
+[6] Highest protein recipe (position [1] after sorting)
+let $sorted :=
+    for $r in doc("recipes.xml")/recipes/recipe
+    order by xs:integer($r/macros/protein) descending
+    return $r
+let $r := $sorted[1]
+return <highest-protein>
+    <title>{$r/title/text()}</title>
+    <author>{$r/author/text()}</author>
+    <protein>{$r/macros/protein/text()}g</protein>
+</highest-protein>
+
+[7] Ingredient count by category
+for $cat in distinct-values(doc("ingredients.xml")/ingredients/ingredient/@category)
+let $items := doc("ingredients.xml")/ingredients/ingredient[@category = $cat]
+order by count($items) descending
+return <category name="{$cat}" count="{count($items)}">
+    {
+        for $i in $items return <item>{$i/name/text()}</item>
+    }
+</category>
+
+[8] Dinner recipes with total prep+cook > 30 (AND)
+for $r in doc("recipes.xml")/recipes/recipe
+let $total := xs:integer($r/times/prep) + xs:integer($r/times/cook)
+where $r/@category = "dinner" and $total > 30
+order by $total descending
+return <long-recipe>
+    <title>{$r/title/text()}</title>
+    <total-time unit="minutes">{$total}</total-time>
+</long-recipe>
+
+[9] Summary by difficulty
+for $diff in distinct-values(doc("recipes.xml")/recipes/recipe/@difficulty)
+let $group := doc("recipes.xml")/recipes/recipe[@difficulty = $diff]
+return <difficulty level="{$diff}">
+    <count>{count($group)}</count>
+    <avg-calories>{round(avg($group/macros/calories))}</avg-calories>
+    <avg-protein>{round(avg($group/macros/protein))}</avg-protein>
+    <avg-rating>{round-half-to-even(avg($group/rating), 2)}</avg-rating>
+</difficulty>
+
+[10] Recipes where high-protein tag exists and title contains "protein"
+for $r in doc("recipes.xml")/recipes/recipe
+where exists($r/tags/tag[. = "high-protein"])
+    and contains(lower-case($r/title), "protein")
+order by xs:decimal($r/rating) descending
+return <tagged-recipe>
+    <title>{$r/title/text()}</title>
+    <author>{$r/author/text()}</author>
+    <rating>{$r/rating/text()}</rating>
+</tagged-recipe>
