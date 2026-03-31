@@ -1,5 +1,46 @@
 # XML Documentation - XPath & XQuery Queries
 
+## ER Diagram
+
+```
+┌─────────────────────────────────────────────┐
+│            RECIPES (Entity)                 │
+├─────────────────────────────────────────────┤
+│ PK: id                                      │
+│ - title                                     │
+│ - description                               │
+│ - author                                    │
+│ - rating                                    │
+│ - difficulty                                │
+│ - category (breakfast/lunch/dinner/snack)   │
+│ - created                                   │
+│ - updated                                   │
+│ - times (prep, cook)                        │
+│ - macros (calories, protein, carbs, fat)    │
+│ - tags (array: high-protein, vegetarian...) │
+└─────────────────────────────────────────────┘
+                      │
+                      │ "uses" (M:N)
+                      │ (ingredient-refs)
+                      │
+┌─────────────────────────────────────────────┐
+│          INGREDIENTS (Entity)               │
+├─────────────────────────────────────────────┤
+│ PK: id                                      │
+│ - name                                      │
+│ - category (base/dairy/protein/veg/...)     │
+│ - amount                                    │
+│ - unit (g/ml/oz/...)                        │
+└─────────────────────────────────────────────┘
+```
+
+### Relationship Details:
+- **Many-to-Many (M:N)**: Each recipe uses multiple ingredients, and each ingredient can be used in multiple recipes
+- **Cardinality**: Recipe ──N:M── Ingredient
+- **Connection Table**: `ingredient-refs/ingredient-ref[@ref]` (in recipes.xml)
+
+---
+
 This document contains 10 **XPath** and 10 **XQuery** queries operating on two XML files:
 
 | File | Root Element | Description |
