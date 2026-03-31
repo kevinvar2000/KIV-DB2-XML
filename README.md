@@ -1,5 +1,87 @@
 # XML Documentation - XPath & XQuery Queries
 
+## Project Domain: Fitness Cookbook
+
+The **Fitness Cookbook** is a specialized culinary database designed for health-conscious meal planning and nutritional tracking. It maintains a comprehensive collection of fitness-oriented recipes paired with detailed ingredient metadata. The core of this system rests on a **Many-to-Many ($M:N$) relationship** between recipes and ingredients: each recipe requires multiple ingredients (represented via `ingredient-refs`), and each ingredient can be utilized across numerous recipes. This relational structure enables flexible querying of recipes by nutritional criteria (calories, macros, protein content) and ingredient availability, making it ideal for meal planning, dietary restriction management, and fitness goal optimization.
+
+---
+
+## Attribute Classification
+
+### RECIPES Entity
+| Attribute | Type | Category | Required | Description |
+|-----------|------|----------|----------|-------------|
+| `id` | Text | Identifier | ✓ | Unique recipe identifier (e.g., `rec_001`) |
+| `title` | Text | Mandatory | ✓ | Recipe name (e.g., "Protein-Packed Blueberry Pancakes") |
+| `author` | Text | Mandatory | ✓ | Recipe creator name |
+| `rating` | Numeric | Mandatory | ✓ | Quality rating (1.0–5.0) |
+| `difficulty` | Text | Mandatory | ✓ | Difficulty level (easy, medium, hard) |
+| `category` | Text | Mandatory | ✓ | Meal type (breakfast, lunch, dinner, snack) |
+| `created` | Date | Mandatory | ✓ | Recipe creation date (ISO 8601) |
+| `updated` | Date | Mandatory | ✓ | Last modification date |
+| `description` | Text | Optional | ✗ | Detailed recipe description |
+| `times/prep` | Numeric | Optional | ✗ | Preparation duration (minutes) |
+| `times/cook` | Numeric | Optional | ✗ | Cooking duration (minutes) |
+| `macros/calories` | Numeric | Optional | ✗ | Energy content per serving |
+| `macros/protein` | Numeric | Optional | ✗ | Protein content in grams |
+| `macros/carbs` | Numeric | Optional | ✗ | Carbohydrate content in grams |
+| `macros/fat` | Numeric | Optional | ✗ | Fat content in grams |
+| `tags` | Text (Array) | Optional | ✗ | Tags (high-protein, vegetarian, vegan, sugar-free) |
+
+### INGREDIENTS Entity
+| Attribute | Type | Category | Required | Description |
+|-----------|------|----------|----------|-------------|
+| `id` | Text | Identifier | ✓ | Unique ingredient identifier (e.g., `ing_1`) |
+| `name` | Text | Mandatory | ✓ | Ingredient name (e.g., "Egg Whites") |
+| `category` | Text | Mandatory | ✓ | Ingredient type (base, dairy, protein, veg, spice) |
+| `amount` | Numeric | Mandatory | ✓ | Default quantity |
+| `unit` | Text | Mandatory | ✓ | Measurement unit (g, ml, oz, cup, etc.) |
+
+---
+
+## Sample Records
+
+### Sample Recipe Record
+```xml
+<recipe id="rec_001" difficulty="medium" category="breakfast" created="2026-01-08" updated="2026-03-15">
+    <title>Protein-Packed Blueberry Pancakes</title>
+    <description>A low-carb, high-protein start to your day using Greek yogurt and oats.</description>
+    <author>Emily Carter</author>
+    <rating>4.7</rating>
+    <times>
+        <prep unit="minutes">10</prep>
+        <cook unit="minutes">15</cook>
+    </times>
+    <macros>
+        <calories>350</calories>
+        <protein unit="g">32</protein>
+        <carbs unit="g">25</carbs>
+        <fat unit="g">8</fat>
+    </macros>
+    <ingredient-refs>
+        <ingredient-ref ref="ing_1"/>
+        <ingredient-ref ref="ing_2"/>
+        <ingredient-ref ref="ing_3"/>
+    </ingredient-refs>
+    <tags>
+        <tag>high-protein</tag>
+        <tag>vegetarian</tag>
+        <tag>sugar-free</tag>
+    </tags>
+</recipe>
+```
+
+### Sample Ingredient Record
+```xml
+<ingredient id="ing_1" category="base">
+    <name>Egg Whites</name>
+    <amount>150</amount>
+    <unit>ml</unit>
+</ingredient>
+```
+
+---
+
 ## ER Diagram
 
 ```
