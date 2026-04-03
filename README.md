@@ -9,33 +9,33 @@ The **Fitness Cookbook** is a specialized culinary database designed for health-
 ## Attribute Classification
 
 ### RECIPES Entity
-| Attribute | Type | Category | Required | Description |
-|-----------|------|----------|----------|-------------|
-| `id` | Text | Identifier | ✓ | Unique recipe identifier (e.g., `rec_001`) |
-| `title` | Text | Mandatory | ✓ | Recipe name (e.g., "Protein-Packed Blueberry Pancakes") |
-| `author` | Text | Mandatory | ✓ | Recipe creator name |
-| `rating` | Numeric | Mandatory | ✓ | Quality rating (1.0–5.0) |
-| `difficulty` | Text | Mandatory | ✓ | Difficulty level (easy, medium, hard) |
-| `category` | Text | Mandatory | ✓ | Meal type (breakfast, lunch, dinner, snack) |
-| `created` | Date | Mandatory | ✓ | Recipe creation date (ISO 8601) |
-| `updated` | Date | Mandatory | ✓ | Last modification date |
-| `description` | Text | Optional | ✗ | Detailed recipe description |
-| `times/prep` | Numeric | Optional | ✗ | Preparation duration (minutes) |
-| `times/cook` | Numeric | Optional | ✗ | Cooking duration (minutes) |
-| `macros/calories` | Numeric | Optional | ✗ | Energy content per serving |
-| `macros/protein` | Numeric | Optional | ✗ | Protein content in grams |
-| `macros/carbs` | Numeric | Optional | ✗ | Carbohydrate content in grams |
-| `macros/fat` | Numeric | Optional | ✗ | Fat content in grams |
-| `tags` | Text (Array) | Optional | ✗ | Tags (high-protein, vegetarian, vegan, sugar-free) |
+| Attribute | Type | Category | Description |
+|-----------|------|----------|-------------|
+| `id` | Text | Identifier | Unique recipe identifier (e.g., `rec_001`) |
+| `title` | Text | Mandatory | Recipe name (e.g., "Protein-Packed Blueberry Pancakes") |
+| `author` | Text | Mandatory | Recipe creator name |
+| `rating` | Numeric | Mandatory | Quality rating (1.0–5.0) |
+| `difficulty` | Text | Mandatory | Difficulty level (easy, medium, hard) |
+| `category` | Text | Mandatory | Meal type (breakfast, lunch, dinner, snack) |
+| `created` | Date | Mandatory | Recipe creation date (ISO 8601) |
+| `updated` | Date | Mandatory | Last modification date |
+| `description` | Text | Optional | Detailed recipe description |
+| `times/prep` | Numeric | Optional | Preparation duration (minutes) |
+| `times/cook` | Numeric | Optional | Cooking duration (minutes) |
+| `macros/calories` | Numeric | Optional | Energy content per serving |
+| `macros/protein` | Numeric | Optional | Protein content in grams |
+| `macros/carbs` | Numeric | Optional | Carbohydrate content in grams |
+| `macros/fat` | Numeric | Optional | Fat content in grams |
+| `tags` | Text (Array) | Optional | Tags (high-protein, vegetarian, vegan, sugar-free) |
 
 ### INGREDIENTS Entity
-| Attribute | Type | Category | Required | Description |
-|-----------|------|----------|----------|-------------|
-| `id` | Text | Identifier | ✓ | Unique ingredient identifier (e.g., `ing_1`) |
-| `name` | Text | Mandatory | ✓ | Ingredient name (e.g., "Egg Whites") |
-| `category` | Text | Mandatory | ✓ | Ingredient type (base, dairy, protein, veg, spice) |
-| `amount` | Numeric | Mandatory | ✓ | Default quantity |
-| `unit` | Text | Mandatory | ✓ | Measurement unit (g, ml, oz, cup, etc.) |
+| Attribute | Type | Category | Description |
+|-----------|------|----------|-------------|
+| `id` | Text | Identifier | Unique ingredient identifier (e.g., `ing_1`) |
+| `name` | Text | Mandatory | Ingredient name (e.g., "Egg Whites") |
+| `category` | Text | Mandatory | Ingredient type (base, dairy, protein, veg, spice) |
+| `amount` | Numeric | Mandatory | Default quantity |
+| `unit` | Text | Mandatory | Measurement unit (g, ml, oz, cup, etc.) |
 
 ---
 
