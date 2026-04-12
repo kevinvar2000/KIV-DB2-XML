@@ -121,4 +121,52 @@
         <unit>g</unit>
     </ingredient>
 
+    <ingredient id="ing_21" category="veg">
+        <name>Lemon</name>
+        <amount>0.5</amount>
+        <unit>unit</unit>
+    </ingredient>
+
+    <ingredient id="ing_22" category="veg">
+        <name>Dill</name>
+        <amount>5</amount>
+        <unit>g</unit>
+    </ingredient>
+
+    <ingredient id="ing_23" category="base">
+        <name>Whole-Grain Bread</name>
+        <amount>1</amount>
+        <unit>slice</unit>
+    </ingredient>
+
+    <ingredient id="ing_24" category="veg">
+        <name>Paprika</name>
+        <amount>3</amount>
+        <unit>g</unit>
+    </ingredient>
+
+    <ingredient id="ing_25" category="veg">
+        <name>Mixed Berries</name>
+        <amount>80</amount>
+        <unit>g</unit>
+    </ingredient>
+
+    <ingredient id="ing_26" category="base">
+        <name>Whole-Wheat Tortilla</name>
+        <amount>1</amount>
+        <unit>unit</unit>
+    </ingredient>
+
+    <ingredient id="ing_27" category="dairy">
+        <name>Milk</name>
+        <amount>200</amount>
+        <unit>ml</unit>
+    </ingredient>
+
+    <ingredient id="ing_28" category="veg">
+        <name>Mixed Vegetables</name>
+        <amount>150</amount>
+        <unit>g</unit>
+    </ingredient>
+
 </ingredients>

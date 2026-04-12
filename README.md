@@ -12,7 +12,7 @@ The **Fitness Cookbook** is a specialized culinary database designed for health-
 | Attribute | Type | Category | Description |
 |-----------|------|----------|-------------|
 | `id` | Text | Identifier | Unique recipe identifier (e.g., `rec_001`) |
-| `title` | Text | Mandatory | Recipe name (e.g., "Protein-Packed Blueberry Pancakes") |
+| `title` | Text | Mandatory | Recipe name (e.g., "Zendaya's Protein Blueberry Pancakes") |
 | `author` | Text | Mandatory | Recipe creator name |
 | `rating` | Numeric | Mandatory | Quality rating (1.0–5.0) |
 | `difficulty` | Text | Mandatory | Difficulty level (easy, medium, hard) |
@@ -44,9 +44,9 @@ The **Fitness Cookbook** is a specialized culinary database designed for health-
 ### Sample Recipe Record
 ```xml
 <recipe id="rec_001" difficulty="medium" category="breakfast" created="2026-01-08" updated="2026-03-15">
-    <title>Protein-Packed Blueberry Pancakes</title>
-    <description>A low-carb, high-protein start to your day using Greek yogurt and oats.</description>
-    <author>Emily Carter</author>
+    <title>Zendaya's Protein Blueberry Pancakes</title>
+    <description>A light, camera-ready breakfast with balanced carbs and protein.</description>
+    <author>Zendaya</author>
     <rating>4.7</rating>
     <times>
         <prep unit="minutes">10</prep>
@@ -127,7 +127,7 @@ This document contains 10 **XPath** and 10 **XQuery** queries operating on two X
 
 | File | Root Element | Description |
 |------|-------------|-------------|
-| `ingredients.xml` | `<ingredients>` | Standalone ingredient list (20 items) |
+| `ingredients.xml` | `<ingredients>` | Standalone ingredient list (28 items) |
 | `recipes.xml` | `<recipes>` | Recipes with ingredient references, author, and rating |
 
 ---

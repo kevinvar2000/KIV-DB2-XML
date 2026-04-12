@@ -2,9 +2,9 @@
 <recipes title="Fitness Cookbook" version="1.2">
 
     <recipe id="rec_001" difficulty="medium" category="breakfast" created="2026-01-08" updated="2026-03-15">
-        <title>Protein-Packed Blueberry Pancakes</title>
-        <description>A low-carb, high-protein start to your day using Greek yogurt and oats.</description>
-        <author>Emily Carter</author>
+        <title>Zendaya's Protein Blueberry Pancakes</title>
+        <description>A light, camera-ready breakfast with balanced carbs and protein.</description>
+        <author>Zendaya</author>
         <rating>4.7</rating>
         <times>
             <prep unit="minutes">10</prep>
@@ -34,9 +34,9 @@
     </recipe>
 
     <recipe id="rec_002" difficulty="easy" category="dinner" created="2026-01-12" updated="2026-03-18">
-        <title>Lemon Herb Baked Salmon</title>
-        <description>Essential Omega-3 fatty acids paired with light seasoning.</description>
-        <author>James Novak</author>
+        <title>Chris Hemsworth's Lemon Herb Baked Salmon</title>
+        <description>High-protein and omega-3 rich dinner inspired by athletic meal prep.</description>
+        <author>Chris Hemsworth</author>
         <rating>4.9</rating>
         <times>
             <prep unit="minutes">5</prep>
@@ -50,10 +50,12 @@
         </macros>
         <ingredient-refs>
             <ingredient-ref ref="ing_4"/>
+            <ingredient-ref ref="ing_21"/>
+            <ingredient-ref ref="ing_22"/>
         </ingredient-refs>
         <instructions>
             <step num="1">Preheat oven to 200°C.</step>
-            <step num="2">Season <ing-ref ref="ing_4">salmon</ing-ref> with lemon and dill.</step>
+            <step num="2">Season <ing-ref ref="ing_4">salmon</ing-ref> with <ing-ref ref="ing_21">lemon</ing-ref> and <ing-ref ref="ing_22">dill</ing-ref>.</step>
         </instructions>
         <tags>
             <tag>keto</tag>
@@ -63,9 +65,9 @@
     </recipe>
 
     <recipe id="rec_003" difficulty="easy" category="snack" created="2026-01-19" updated="2026-03-20">
-        <title>Avocado Toast with Poached Egg</title>
-        <description>Healthy fats and high-quality protein on whole-grain sourdough.</description>
-        <author>Sarah Kim</author>
+        <title>Hailey Bieber's Avocado Toast with Poached Egg</title>
+        <description>A balanced brunch favorite with healthy fats and quality protein.</description>
+        <author>Hailey Bieber</author>
         <rating>4.5</rating>
         <times>
             <prep unit="minutes">5</prep>
@@ -80,9 +82,10 @@
         <ingredient-refs>
             <ingredient-ref ref="ing_5"/>
             <ingredient-ref ref="ing_6"/>
+            <ingredient-ref ref="ing_23"/>
         </ingredient-refs>
         <instructions>
-            <step num="1">Mash the <ing-ref ref="ing_5">avocado</ing-ref> on toasted bread.</step>
+            <step num="1">Mash the <ing-ref ref="ing_5">avocado</ing-ref> on toasted <ing-ref ref="ing_23">bread</ing-ref>.</step>
             <step num="2">Poach the <ing-ref ref="ing_6">egg</ing-ref> for 3 minutes.</step>
         </instructions>
         <tags>
@@ -92,9 +95,9 @@
     </recipe>
 
     <recipe id="rec_004" difficulty="hard" category="lunch" created="2026-01-25" updated="2026-03-21">
-        <title>Quinoa Power Bowl</title>
-        <description>A complex meal-prep friendly bowl with plant-based protein.</description>
-        <author>Marco Rossi</author>
+        <title>Serena Williams' Quinoa Power Bowl</title>
+        <description>A performance-focused bowl built for training days and recovery.</description>
+        <author>Serena Williams</author>
         <rating>4.3</rating>
         <times>
             <prep unit="minutes">15</prep>
@@ -109,10 +112,11 @@
         <ingredient-refs>
             <ingredient-ref ref="ing_7"/>
             <ingredient-ref ref="ing_8"/>
+            <ingredient-ref ref="ing_24"/>
         </ingredient-refs>
         <instructions>
             <step num="1">Rinse <ing-ref ref="ing_7">quinoa</ing-ref> and boil for 15 mins.</step>
-            <step num="2">Roast <ing-ref ref="ing_8">chickpeas</ing-ref> with paprika.</step>
+            <step num="2">Roast <ing-ref ref="ing_8">chickpeas</ing-ref> with <ing-ref ref="ing_24">paprika</ing-ref>.</step>
         </instructions>
         <tags>
             <tag>vegan</tag>
@@ -122,9 +126,9 @@
     </recipe>
 
     <recipe id="rec_005" difficulty="medium" category="dinner" created="2026-02-02" updated="2026-03-22">
-        <title>Lean Beef Stir-Fry</title>
-        <description>Rapid muscle recovery meal with lean steak and colorful peppers.</description>
-        <author>David Chen</author>
+        <title>Michael B. Jordan's Lean Beef Stir-Fry</title>
+        <description>A lean, high-protein stir-fry designed for strength-focused nutrition.</description>
+        <author>Michael B. Jordan</author>
         <rating>4.6</rating>
         <times>
             <prep unit="minutes">10</prep>
@@ -149,9 +153,9 @@
     </recipe>
 
     <recipe id="rec_006" difficulty="easy" category="snack" created="2026-02-10" updated="2026-03-22">
-        <title>Cottage Cheese Berry Bowl</title>
-        <description>Slow-digesting casein protein for overnight recovery.</description>
-        <author>Emily Carter</author>
+        <title>Gal Gadot's Cottage Cheese Berry Bowl</title>
+        <description>A quick protein snack with berries for a naturally sweet finish.</description>
+        <author>Gal Gadot</author>
         <rating>4.2</rating>
         <times>
             <prep unit="minutes">2</prep>
@@ -165,9 +169,10 @@
         </macros>
         <ingredient-refs>
             <ingredient-ref ref="ing_10"/>
+            <ingredient-ref ref="ing_25"/>
         </ingredient-refs>
         <instructions>
-            <step num="1">Mix <ing-ref ref="ing_10">cottage cheese</ing-ref> with berries.</step>
+            <step num="1">Mix <ing-ref ref="ing_10">cottage cheese</ing-ref> with <ing-ref ref="ing_25">berries</ing-ref>.</step>
         </instructions>
         <tags>
             <tag>low-fat</tag>
@@ -176,9 +181,9 @@
     </recipe>
 
     <recipe id="rec_007" difficulty="medium" category="lunch" created="2026-02-14" updated="2026-03-23">
-        <title>Turkey and Spinach Wrap</title>
-        <description>High protein, low glycemic index lunch.</description>
-        <author>Anna Petrova</author>
+        <title>Ryan Reynolds' Turkey and Spinach Wrap</title>
+        <description>A simple, high-protein wrap for busy and active schedules.</description>
+        <author>Ryan Reynolds</author>
         <rating>4.4</rating>
         <times>
             <prep unit="minutes">10</prep>
@@ -192,9 +197,10 @@
         </macros>
         <ingredient-refs>
             <ingredient-ref ref="ing_11"/>
+            <ingredient-ref ref="ing_26"/>
         </ingredient-refs>
         <instructions>
-            <step num="1">Layer <ing-ref ref="ing_11">turkey</ing-ref> on a whole-wheat tortilla.</step>
+            <step num="1">Layer <ing-ref ref="ing_11">turkey</ing-ref> on a <ing-ref ref="ing_26">whole-wheat tortilla</ing-ref>.</step>
         </instructions>
         <tags>
             <tag>high-protein</tag>
@@ -202,9 +208,9 @@
     </recipe>
 
     <recipe id="rec_008" difficulty="easy" category="breakfast" created="2026-02-21" updated="2026-03-24">
-        <title>Overnight Protein Oats</title>
-        <description>Convenient grab-and-go breakfast.</description>
-        <author>James Novak</author>
+        <title>Jennifer Lopez's Overnight Protein Oats</title>
+        <description>A prep-ahead breakfast that keeps energy stable through the morning.</description>
+        <author>Jennifer Lopez</author>
         <rating>4.8</rating>
         <times>
             <prep unit="minutes">5</prep>
@@ -218,9 +224,11 @@
         </macros>
         <ingredient-refs>
             <ingredient-ref ref="ing_12"/>
+            <ingredient-ref ref="ing_2"/>
+            <ingredient-ref ref="ing_27"/>
         </ingredient-refs>
         <instructions>
-            <step num="1">Combine <ing-ref ref="ing_12">whey</ing-ref> with milk and oats overnight.</step>
+            <step num="1">Combine <ing-ref ref="ing_12">whey</ing-ref> with <ing-ref ref="ing_27">milk</ing-ref> and <ing-ref ref="ing_2">oats</ing-ref> overnight.</step>
         </instructions>
         <tags>
             <tag>meal-prep</tag>
@@ -229,9 +237,9 @@
     </recipe>
 
     <recipe id="rec_009" difficulty="hard" category="dinner" created="2026-02-27" updated="2026-03-25">
-        <title>Stuffed Bell Peppers</title>
-        <description>Lean turkey and rice stuffed peppers.</description>
-        <author>Marco Rossi</author>
+        <title>Dwayne Johnson's Stuffed Bell Peppers</title>
+        <description>A hearty, macro-friendly dinner featuring lean turkey and rice.</description>
+        <author>Dwayne Johnson</author>
         <rating>4.1</rating>
         <times>
             <prep unit="minutes">20</prep>
@@ -255,9 +263,9 @@
     </recipe>
 
     <recipe id="rec_010" difficulty="easy" category="snack" created="2026-03-03" updated="2026-03-26">
-        <title>Greek Salad with Feta</title>
-        <description>Refreshing vegetable mix for micronutrients.</description>
-        <author>Sarah Kim</author>
+        <title>Gigi Hadid's Greek Salad with Feta</title>
+        <description>A fresh salad packed with micronutrients and balanced fats.</description>
+        <author>Gigi Hadid</author>
         <rating>4.0</rating>
         <times>
             <prep unit="minutes">8</prep>
@@ -271,9 +279,10 @@
         </macros>
         <ingredient-refs>
             <ingredient-ref ref="ing_14"/>
+            <ingredient-ref ref="ing_28"/>
         </ingredient-refs>
         <instructions>
-            <step num="1">Toss veggies with <ing-ref ref="ing_14">feta</ing-ref>.</step>
+            <step num="1">Toss <ing-ref ref="ing_28">veggies</ing-ref> with <ing-ref ref="ing_14">feta</ing-ref>.</step>
         </instructions>
         <tags>
             <tag>vegetarian</tag>
