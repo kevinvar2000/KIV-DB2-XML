@@ -1,3 +1,24 @@
+# Fitness Cookbook Project Structure
+
+The project is organized by representation format.
+
+## Modules
+- xml
+- json
+- rdf
+
+Each module contains:
+- data: source dataset files
+- queries: query examples for that format
+- README.md: module-specific documentation
+
+## Current Layout
+- xml/data: recipes.xml, ingredients.xml
+- xml/queries: xpath_queries.txt, xquery_queries.xq, queries.txt
+- json/data: fitness_cookbook.json
+- json/queries: jsonpath_queries.txt
+- rdf/data: fitness_cookbook.ttl
+- rdf/queries: sparql_queries.rq
 # XML Documentation - XPath & XQuery Queries
 
 ## Project Domain: Fitness Cookbook
