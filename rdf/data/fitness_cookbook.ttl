@@ -1,0 +1,53 @@
+@prefix : <http://fitness.example.org/cookbook/> .
+@prefix schema: <http://schema.org/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# Recipe 001
+:rec_001 a schema:Recipe ;
+    schema:name "Protein-Packed Blueberry Pancakes" ;
+    schema:recipeCategory "Breakfast" ;
+    :difficulty "Medium" ;
+    schema:nutrition [
+        a schema:NutritionInformation ;
+        schema:calories "350 kcal" ;
+        schema:proteinContent "32g" ;
+        schema:fatContent "8g" ;
+        schema:carbohydrateContent "25g"
+    ] ;
+    schema:recipeIngredient :ing_1, :ing_2, :ing_3 ;
+    schema:suitableForDiet schema:VegetarianDiet .
+
+# Recipe 002
+:rec_002 a schema:Recipe ;
+    schema:name "Lemon Herb Baked Salmon" ;
+    schema:recipeCategory "Dinner" ;
+    :difficulty "Easy" ;
+    schema:nutrition [
+        a schema:NutritionInformation ;
+        schema:calories "420 kcal" ;
+        schema:proteinContent "40g" ;
+        schema:fatContent "22g"
+    ] ;
+    schema:recipeIngredient :ing_4 ;
+    schema:suitableForDiet schema:LowCarbDiet, schema:KetoDiet .
+
+# Recipe 004 (Plant based example)
+:rec_004 a schema:Recipe ;
+    schema:name "Quinoa Power Bowl" ;
+    schema:recipeCategory "Lunch" ;
+    :difficulty "Hard" ;
+    schema:suitableForDiet schema:VeganDiet ;
+    schema:recipeIngredient :ing_7, :ing_8 .
+
+# Define some Ingredients as entities
+:ing_1 a schema:Product ; rdfs:label "Egg Whites" .
+:ing_4 a schema:Product ; rdfs:label "Salmon Fillet" .
+:ing_7 a schema:Product ; rdfs:label "Quinoa" .
+:ing_12 a schema:Product ; rdfs:label "Whey Protein" .
+
+# Recipe 008 (linking to ingredients)
+:rec_008 a schema:Recipe ;
+    schema:name "Overnight Protein Oats" ;
+    schema:recipeIngredient :ing_12 ;
+    schema:recipeCategory "Breakfast" .

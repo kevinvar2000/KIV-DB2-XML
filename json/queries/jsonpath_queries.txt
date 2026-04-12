@@ -1,0 +1,13 @@
+# JSONPath Queries
+
+# 1) Get all recipe titles
+$.recipes[*].title
+
+# 2) Get recipes with rating >= 4.5
+$.recipes[?(@.rating >= 4.5)]
+
+# 3) Get all ingredient names
+$.ingredients[*].name
+
+# 4) Get dinner recipes
+$.recipes[?(@.category == 'dinner')]

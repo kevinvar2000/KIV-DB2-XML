@@ -1,0 +1,17 @@
+# SPARQL Queries
+
+# 1) List recipe resources
+SELECT ?recipe
+WHERE {
+  ?recipe a ?type .
+  FILTER(CONTAINS(LCASE(STR(?type)), "recipe"))
+}
+LIMIT 25
+
+# 2) List recipe titles if available
+SELECT ?recipe ?title
+WHERE {
+  ?recipe ?p ?title .
+  FILTER(CONTAINS(LCASE(STR(?p)), "title"))
+}
+LIMIT 25
