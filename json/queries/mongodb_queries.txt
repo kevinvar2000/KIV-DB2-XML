@@ -1,0 +1,37 @@
+// MongoDB Queries for Fitness Cookbook Project
+// Assumes two collections: recipes and ingredients
+
+// 1. Find all recipes that are high in protein (protein > 30g) and vegetarian
+// Uses logical operator ($and), comparison operator ($gt), and array match
+// db.recipes.find({ $and: [ { "macros.protein": { $gt: 30 } }, { tags: "vegetarian" } ] })
+
+// 2. Find all recipes that use an ingredient with "Egg" in its name (regex)
+// Uses $lookup to join with ingredients, regex, and projection
+/*
+db.recipes.aggregate([
+  { $lookup: {
+      from: "ingredients",
+      localField: "ingredient_refs",
+      foreignField: "ing_id",
+      as: "ingredient_docs"
+  }},
+  { $match: { "ingredient_docs.name": { $regex: "Egg", $options: "i" } } },
+  { $project: { title: 1, "ingredient_docs.name": 1 } }
+])
+*/
+
+// 3. List all recipes that can be prepared in 10 minutes or less (prep time), sorted by calories ascending
+// Uses dot notation, comparison, and sorting
+// db.recipes.find({ "times.prep.value": { $lte: 10 } }, { title: 1, "macros.calories": 1 }).sort({ "macros.calories": 1 })
+
+// 4. Find all ingredients that are either "dairy" or "protein" category (enum $in), and do not have the field "amount"
+// Uses $in and $exists
+// db.ingredients.find({ category: { $in: ["dairy", "protein"] }, amount: { $exists: false } })
+
+// 5. Aggregate: Count how many recipes are in each category (e.g., breakfast, dinner, snack)
+// Uses $group
+/*
+db.recipes.aggregate([
+  { $group: { _id: "$category", count: { $sum: 1 } } }
+])
+*/

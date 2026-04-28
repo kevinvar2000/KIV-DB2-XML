@@ -1,0 +1,100 @@
+[
+    {
+        "ing_id": "ing_1",
+        "name": "Egg Whites",
+        "category": "base",
+        "amount": 150,
+        "unit": "ml"
+    },
+    {
+        "ing_id": "ing_2",
+        "name": "Rolled Oats",
+        "category": "base",
+        "amount": 40,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_3",
+        "name": "Greek Yogurt 0%",
+        "category": "dairy",
+        "amount": 100,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_4",
+        "name": "Salmon Fillet",
+        "category": "protein",
+        "amount": 200,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_5",
+        "name": "Avocado",
+        "category": "veg",
+        "amount": 0.5,
+        "unit": "unit"
+    },
+    {
+        "ing_id": "ing_6",
+        "name": "Egg",
+        "category": "protein",
+        "amount": 1,
+        "unit": "unit"
+    },
+    {
+        "ing_id": "ing_7",
+        "name": "Quinoa",
+        "category": "base",
+        "amount": 100,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_8",
+        "name": "Chickpeas",
+        "category": "protein",
+        "amount": 120,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_9",
+        "name": "Beef Strips",
+        "category": "protein",
+        "amount": 250,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_10",
+        "name": "Cottage Cheese",
+        "category": "dairy",
+        "amount": 200,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_11",
+        "name": "Turkey Breast",
+        "category": "protein",
+        "amount": 150,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_12",
+        "name": "Whey Protein",
+        "category": "protein",
+        "amount": 30,
+        "unit": "g"
+    },
+    {
+        "ing_id": "ing_13",
+        "name": "Bell Pepper",
+        "category": "veg",
+        "amount": 3,
+        "unit": "unit"
+    },
+    {
+        "ing_id": "ing_14",
+        "name": "Feta Cheese",
+        "category": "dairy",
+        "amount": 50,
+        "unit": "g"
+    }
+]
