@@ -2,7 +2,8 @@
 
 ## Project Domain: Fitness Cookbook
 
-The **Fitness Cookbook** is a health-focused culinary database for meal planning and nutritional tracking. It contains fitness-oriented recipes and detailed ingredient metadata. The core is a **Many-to-Many (M:N) relationship** between recipes and ingredients: each recipe references multiple ingredients (via `ingredient_refs`), and each ingredient can be used in many recipes. This enables flexible querying by nutrition, tags, and ingredient availability.
+The **Fitness Cookbook** is a specialized culinary database designed for health-conscious meal planning and nutritional tracking. It maintains a comprehensive collection of fitness-oriented recipes paired with detailed ingredient metadata. The core of this system rests on a **Many-to-Many ($M:N$) relationship** between recipes and ingredients: each recipe requires multiple ingredients (represented via `ingredient-refs`), and each ingredient can be utilized across numerous recipes. This relational structure enables flexible querying of recipes by nutritional criteria (calories, macros, protein content) and ingredient availability, making it ideal for meal planning, dietary restriction management, and fitness goal optimization.
+
 
 ---
 
@@ -80,14 +81,14 @@ The **Fitness Cookbook** is a health-focused culinary database for meal planning
 ┌─────────────────────────────────────────────┐
 │            RECIPES (Collection)             │
 ├─────────────────────────────────────────────┤
-│ _id                                        │
-│ title                                      │
-│ ...                                        │
+│ _id                                         │
+│ title                                       │
+│ ...                                         │
 │ ingredient_refs (Array of ing_id)           │
 └─────────────────────────────────────────────┘
                   │
                   │  M:N (ingredient_refs)
-                  ▼
+                  │
 ┌─────────────────────────────────────────────┐
 │          INGREDIENTS (Collection)           │
 ├─────────────────────────────────────────────┤
@@ -129,9 +130,9 @@ db.recipes.aggregate([
 db.recipes.find({ "times.prep.value": { $lte: 10 } }, { title: 1, "macros.calories": 1 }).sort({ "macros.calories": 1 })
 ```
 
-**4. Ingredients in "dairy" or "protein" category, missing amount:**
+**4. Ingredients in "veg" or "protein" category, missing amount:**
 ```js
-db.ingredients.find({ category: { $in: ["dairy", "protein"] }, amount: { $exists: false } })
+db.ingredients.find({ category: { $in: ["veg", "protein"] }, amount: { $exists: false } })
 ```
 
 **5. Count recipes by category:**
