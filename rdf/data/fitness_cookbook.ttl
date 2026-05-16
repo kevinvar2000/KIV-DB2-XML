@@ -1,53 +1,96 @@
-@prefix : <http://fitness.example.org/cookbook/> .
-@prefix schema: <http://schema.org/> .
+@prefix fc: <http://fitnesscookbook.com/ontology#> .
+@prefix fcd: <http://fitnesscookbook.com/data/> .
+@prefix fcp: <http://fitnesscookbook.com/person/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 
-# Recipe 001
-:rec_001 a schema:Recipe ;
-    schema:name "Protein-Packed Blueberry Pancakes" ;
-    schema:recipeCategory "Breakfast" ;
-    :difficulty "Medium" ;
-    schema:nutrition [
-        a schema:NutritionInformation ;
-        schema:calories "350 kcal" ;
-        schema:proteinContent "32g" ;
-        schema:fatContent "8g" ;
-        schema:carbohydrateContent "25g"
-    ] ;
-    schema:recipeIngredient :ing_1, :ing_2, :ing_3 ;
-    schema:suitableForDiet schema:VegetarianDiet .
+# ==========================================
+# PERSONS (Authors) - Namespace Schema 1
+# ==========================================
 
-# Recipe 002
-:rec_002 a schema:Recipe ;
-    schema:name "Lemon Herb Baked Salmon" ;
-    schema:recipeCategory "Dinner" ;
-    :difficulty "Easy" ;
-    schema:nutrition [
-        a schema:NutritionInformation ;
-        schema:calories "420 kcal" ;
-        schema:proteinContent "40g" ;
-        schema:fatContent "22g"
-    ] ;
-    schema:recipeIngredient :ing_4 ;
-    schema:suitableForDiet schema:LowCarbDiet, schema:KetoDiet .
+fcp:Zendaya a fc:Person ;
+    fc:name "Zendaya" ;
+    fc:createdRecipe fcd:rec_001 .
 
-# Recipe 004 (Plant based example)
-:rec_004 a schema:Recipe ;
-    schema:name "Quinoa Power Bowl" ;
-    schema:recipeCategory "Lunch" ;
-    :difficulty "Hard" ;
-    schema:suitableForDiet schema:VeganDiet ;
-    schema:recipeIngredient :ing_7, :ing_8 .
+fcp:ChrisHemsworth a fc:Person ;
+    fc:name "Chris Hemsworth" ;
+    fc:createdRecipe fcd:rec_002 .
 
-# Define some Ingredients as entities
-:ing_1 a schema:Product ; rdfs:label "Egg Whites" .
-:ing_4 a schema:Product ; rdfs:label "Salmon Fillet" .
-:ing_7 a schema:Product ; rdfs:label "Quinoa" .
-:ing_12 a schema:Product ; rdfs:label "Whey Protein" .
+fcp:HaileyBieber a fc:Person ;
+    fc:name "Hailey Bieber" ;
+    fc:createdRecipe fcd:rec_003 .
 
-# Recipe 008 (linking to ingredients)
-:rec_008 a schema:Recipe ;
-    schema:name "Overnight Protein Oats" ;
-    schema:recipeIngredient :ing_12 ;
-    schema:recipeCategory "Breakfast" .
+fcp:SerenaWilliams a fc:Person ;
+    fc:name "Serena Williams" ;
+    fc:createdRecipe fcd:rec_004 .
+
+# ==========================================
+# INGREDIENTS - Namespace Schema 2
+# ==========================================
+
+fcd:ing_1 a fc:Ingredient ;
+    fc:name "Egg Whites" ;
+    fc:category "base" ;
+    fc:usedIn fcd:rec_001 .
+
+fcd:ing_2 a fc:Ingredient ;
+    fc:name "Oats" ;
+    fc:category "base" ;
+    fc:usedIn fcd:rec_001 .
+
+fcd:ing_4 a fc:Ingredient ;
+    fc:name "Salmon" ;
+    fc:category "protein" ;
+    fc:usedIn fcd:rec_002 .
+
+fcd:ing_5 a fc:Ingredient ;
+    fc:name "Avocado" ;
+    fc:category "veg" ;
+    fc:usedIn fcd:rec_003 .
+
+fcd:ing_7 a fc:Ingredient ;
+    fc:name "Quinoa" ;
+    fc:category "base" ;
+    fc:usedIn fcd:rec_004 .
+
+# ==========================================
+# RECIPES - Namespace Schema 2
+# ==========================================
+
+fcd:rec_001 a fc:Recipe ;
+    fc:title "Zendaya's Protein Blueberry Pancakes" ;
+    fc:author fcp:Zendaya ;
+    fc:difficulty "medium" ;
+    fc:category "breakfast" ;
+    fc:calories "350"^^xsd:integer ;
+    fc:prepTime "10"^^xsd:integer ;
+    fc:description "A light, camera-ready breakfast with balanced carbs and protein." ;
+    fc:usesIngredient fcd:ing_1, fcd:ing_2 .
+
+fcd:rec_002 a fc:Recipe ;
+    fc:title "Chris Hemsworth's Lemon Herb Baked Salmon" ;
+    fc:author fcp:ChrisHemsworth ;
+    fc:difficulty "easy" ;
+    fc:category "dinner" ;
+    fc:calories "420"^^xsd:integer ;
+    fc:prepTime "5"^^xsd:integer ;
+    # Intentionally missing description to test OPTIONAL queries
+    fc:usesIngredient fcd:ing_4 .
+
+fcd:rec_003 a fc:Recipe ;
+    fc:title "Hailey Bieber's Avocado Toast with Poached Egg" ;
+    fc:author fcp:HaileyBieber ;
+    fc:difficulty "easy" ;
+    fc:category "snack" ;
+    fc:calories "280"^^xsd:integer ;
+    fc:prepTime "5"^^xsd:integer ;
+    fc:description "A balanced brunch favorite with healthy fats and quality protein." ;
+    fc:usesIngredient fcd:ing_5 .
+
+fcd:rec_004 a fc:Recipe ;
+    fc:title "Serena Williams' Quinoa Power Bowl" ;
+    fc:author fcp:SerenaWilliams ;
+    fc:difficulty "hard" ;
+    fc:category "lunch" ;
+    fc:calories "520"^^xsd:integer ;
+    fc:prepTime "15"^^xsd:integer ;
+    fc:usesIngredient fcd:ing_7 .
